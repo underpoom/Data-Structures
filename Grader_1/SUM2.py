@@ -12,7 +12,5 @@ for i in range(0,len(s)):
         if d not in l:
           l.append(d.copy())
 
-if len(s)<=3:
-  print('Array Input Length Must More Than '+ str(len(s)))
-else:
-  print(l)
+print('Array Input Length Must More Than '+ str(len(s))) if len(s)<=3 else print(l)
+
