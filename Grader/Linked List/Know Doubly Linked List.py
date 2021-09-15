@@ -119,7 +119,7 @@ class LinkedList :
             p.next = q.prev = x
             self.size += 1  
             return q
-
+#
     def _print(self):
         if self.size == 0:
             return 'Empty'
