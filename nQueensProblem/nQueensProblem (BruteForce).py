@@ -1,6 +1,6 @@
 from itertools import permutations
 import timeit
-N = 9
+N = 8
 
 start = timeit.default_timer()
 from itertools import permutations
@@ -37,9 +37,8 @@ for perm in perms:
     else:
         print_table()
         num_comb += 1
-        print(f"solution{num_comb}")
-        print(" ")
-                           
+        print("solution" + str(num_comb) +'\n')
+                            
     table = [[0] * N for _ in range(N)]
 
 stop = timeit.default_timer()
