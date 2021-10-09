@@ -10,10 +10,9 @@ def print_table():
         print(table[row])
 
 def put_queen(x,y):
-    if table[y][x] == 0:
+    if not table[y][x]:
         for m in range(N):
-            table[y][m] = 1
-            table[m][x] = 1
+            table[y][m] = table[m][x] = 1
             table[y][x] = 2
             if y+m <= N-1 and x+m <= N-1:
                 table[y+m][x+m] = 1
@@ -29,26 +28,19 @@ def put_queen(x,y):
 
 table = [[0]*N for _ in range(N)]    
 perms = permutations([i for i in range(N)])
-
 num_comb = 0
-k = 0
+
 for perm in perms:
     for i in range(N):
-        if put_queen(perm[i], i) == True:
-            k+=1
-        else:
-            k=0
+        if put_queen(perm[i], i) == False:
             break
-    if k == N:
-        k=0
+    else:
         print_table()
         num_comb += 1
         print(f"solution{num_comb}")
         print(" ")
-    
-                                   
+                           
     table = [[0] * N for _ in range(N)]
 
 stop = timeit.default_timer()
-
 print('Time: ', stop - start)  #Timer
