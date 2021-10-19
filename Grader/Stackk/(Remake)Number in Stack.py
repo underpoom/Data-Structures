@@ -64,4 +64,5 @@ for i in s:
             st.MD(i[1])
     else:
         st.P()
+        
 print('Value in Stack = [' + ', '.join([str(e) for e in st.item])+']')
