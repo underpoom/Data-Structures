@@ -126,5 +126,3 @@ t._printtree()
 print('--------------------------------------')
 t.insert(1)
 t._printtree()
-
-    
