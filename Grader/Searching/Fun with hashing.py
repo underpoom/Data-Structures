@@ -19,7 +19,6 @@ class hash:
         return str(self.data)
     
 print(' ***** Fun with hashing *****')
-#input('Enter Input :')
 s = input('Enter Input : ').split('/')
 sTable ,mxCol ,empl = int(s[0].split()[0]),int(s[0].split()[1]),int(s[0].split()[0])
 l = [None]*sTable
