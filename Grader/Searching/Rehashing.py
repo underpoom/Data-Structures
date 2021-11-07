@@ -17,24 +17,14 @@ def rehash(l):
         k = l[i]
         kc = k
         nCol = 0
-
         if l[i] is not None and l[k%len(l)] is None:
             k = (kc%len(l)+pow(nCol,2))%len(l)
-
         elif l[i] is not None and l[k%len(l)] is not None :
-            
             if l[(k+1)%len(l)] is None and i!=k%len(l):
                 print('collision number', nCol+1 ,'at',k%len(l))
-                k = (kc%len(l)+pow(nCol+1,2))%len(l)
-                
-            
-
-                
-                
-        
+                k = (kc%len(l)+pow(nCol+1,2))%len(l)          
         if l[i] is not None and l[k%len(l)] is None :
             l[i],l[k%len(l)] = l[k%len(l)],l[i]
-        
     return l
 
 def ins(l,nCol,mxCol,i):
@@ -62,16 +52,12 @@ def print_l(l):
     print('----------------------------------------')
 
 print(' ***** Rehashing *****')
-#s = '19 2 49/8741 4874 787842 77 8789 7542 751213 978458'.split('/')
 s = input('Enter Input : ').split('/')
-
 sTable, mxCol, thres = int(s[0].split()[0]),int(s[0].split()[1]),int(s[0].split()[2])
 empl = 0
-
 l = [None]*(sTable)
 
 print('Initial Table :')
-
 print_l(l)
 
 for i in [int(e) for e in s[1].split()]:
@@ -86,5 +72,4 @@ for i in [int(e) for e in s[1].split()]:
         ins(l,nCol,mxCol,i)
     else:
         ins(l,nCol,mxCol,i)
-      
     print_l(l)
