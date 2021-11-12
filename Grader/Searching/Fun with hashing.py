@@ -14,7 +14,6 @@ class hash:
         for i in data[0]:
             id+=ord(i)
         self.id = id%sTable
-
     def __str__(self):
         return str(self.data)
     
@@ -35,8 +34,6 @@ for i in s[1].split(','):
         for j in range(len(l)):
             print('#'+str(j+1)+'\t'+str(l[j]))
         print('---------------------------')
-
-       
     if l[id] is None and nCol <= mxCol :
         l[id] = k
         empl-=1
